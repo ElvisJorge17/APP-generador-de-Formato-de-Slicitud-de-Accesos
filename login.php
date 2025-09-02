@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login_username"]) && i
     $login_password = $_POST["login_password"];
     
     // Intentar conexión a Oracle con las credenciales proporcionadas
-    $conn = @oci_connect($login_username, $login_password, "//172.20.100.37:1531/OR0601", "AL32UTF8");
+    $conn = @oci_connect($login_username, $login_password, "server-DB", "AL32UTF8");
     
     if ($conn) {
         // Conexión exitosa, guardar en la sesión
@@ -139,4 +139,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login_username"]) && i
         </div>
     </div>
 </body>
+
 </html>
